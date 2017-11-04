@@ -1,0 +1,20 @@
+{% embed 'partials/base.html.twig' %}
+
+	{% set collection = page.collection() %}
+
+	{% block content %}
+
+		<div class="intro">
+			<h1>{{ page.header.page_title }}</h1>
+			{{ page.content }}
+		</div>
+
+		<div id="listing" class="block pure-u-2-3 h-feed">
+			{% for child in collection %}
+		        {% include 'categories.html.twig' with {'category':page, 'page':child, 'truncate':true} %}
+		  {% endfor %}
+		</div>
+
+	{% endblock %}
+
+{% endembed %}

@@ -1,0 +1,56 @@
+//
+// Colors
+//
+// Markup: colors.html
+//
+// .c-blue - Blue color
+// .c-bluegray - Blue color
+// .c-lightgray - Blue color
+// .c-darkgray - Blue color
+// .c-green - Blue color
+// .c-yellow - Blue color
+// .c-orange - Blue color
+//
+//
+// styleguide Components.colors
+
+$c-blue: #0984E3;
+$c-bluegray: #617D92;
+$c-lightgray: #CACACA;
+$c-darkgray: #333333;
+$c-green: #4DDA4B;
+$c-yellow: #FFC300;
+$c-orange: #FF6A00;
+
+.color-card {
+  width: 100px;
+  height: 100px;
+}
+
+.c-blue {
+  background-color: $c-blue;
+}
+
+.c-bluegray {
+  background-color: $c-bluegray;
+}
+
+.c-lightgray {
+  background-color: $c-lightgray;
+}
+
+.c-darkgray {
+  background-color: $c-darkgray;
+}
+
+.c-green {
+  background-color: $c-green;
+}
+
+.c-yellow {
+  background-color: $c-yellow;
+}
+
+.c-orange {
+  background-color: $c-orange;
+}

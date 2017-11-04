@@ -1,0 +1,43 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	<div class="intro">
+			<h1>{{ header.title }}</h1>
+			{{ page.content }}
+	</div>
+
+	<div class="pre-apply">
+		<h2>Pre aplicación</h2>
+		{{header.pre_apply_content}}
+		<div class="pre-apply-step">
+			{{header.pre_apply_category_title}}
+			{{header.pre_apply_category_content}}
+			<a href="#">Conocer categorías</a>
+		</div>
+		<div class="pre-apply-step">
+			{{header.pre_apply_committee_title}}
+			{{header.pre_apply_committee_content}}
+			<a href="">Conformación del comité</a>
+		</div>
+	</div>
+
+	<div class="apply">
+		<h2>Aplicación</h2>
+		<div class="apply-step">
+			{{header.apply_signup_title}}
+			{{header.apply_signup_content}}
+		</div>
+		<div class="apply-step">
+			{{header.apply_report_title}}
+			{{header.apply_report_content}}
+		</div>
+	</div>
+
+	<div class="discover-categories">
+		<h2>¡Está listo para aplicar!</h2>
+		<a href="#">Descubra su categoría</a>
+	</div>
+
+
+{% endblock %}

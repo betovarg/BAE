@@ -1,0 +1,54 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	<div class="intro">
+			<h1>{{ header.title }}</h1>
+			{{ page.content }}
+	</div>
+
+	<div class="goals">
+		<h2>{{header.goal_title}}</h2>
+		<p>{{header.goal_content}}</p>
+		<div class="goal-image">
+			{% set image_parts = pathinfo(header.goal_image) %}
+			{% set image_basename = image_parts.basename %}
+			{% set image_page = image_parts.dirname == '.' ? page : page.find(image_parts.dirname) %}
+
+			{{ image_page.media[image_basename].resize(600).html() }}
+		</div>
+	</div>
+
+	<div class="acievements">
+		<h2>Logros</h2>
+
+		<div class="tab-1">
+			<h3>{{header.achieve_first_title}}</h3>
+			<p>{{header.achieve_first_content}}</p>
+		</div>
+		<div class="tab-2">
+			<h3>{{header.achieve_second_title}}</h3>
+			<p>{{header.achieve_second_content}}</p>
+		</div>
+		<div class="tab-3">
+			<h3>{{header.achieve_third_title}}</h3>
+			<p>{{header.achieve_third_content}}</p>
+		</div>
+		<div class="tab-4">
+			<h3>{{header.achieve_third_title}}</h3>
+			<p>{{header.achieve_third_content}}</p>
+		</div>
+	</div>
+
+	<div class="team">
+		<h3>{{header.team_title}}</h3>
+		<p>{{header.team_content}}</p>
+
+		{% set image_parts = pathinfo(header.team_image) %}
+		{% set image_basename = image_parts.basename %}
+		{% set image_page = image_parts.dirname == '.' ? page : page.find(image_parts.dirname) %}
+
+		{{ image_page.media[image_basename].resize(800).html() }}
+	</div>
+
+{% endblock %}

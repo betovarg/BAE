@@ -1,0 +1,62 @@
+//
+// Buttons
+//
+// Markup: buttons.html
+//
+// .button-blue   - Blue button
+// .button-orange - Orange button
+// .button-green - Green button
+// .button-hollow - Hollow blue button
+// .button-l-blue - Button large blue
+// .button-xl-orange - Button XL Orange
+// .button-white - Button white
+//
+// styleguide Components.buttons
+
+.button {
+  background-color: $c-lightgray;
+  border-radius: 4px;
+  color: #000;
+  display: inline-block;
+  font-family: $headings-font;
+  font-size: 1.4rem;
+  padding: 10px 14px;
+  text-decoration: none;
+}
+
+.button-blue {
+  background-color: $c-blue;
+  color: #fff;
+}
+
+.button-orange {
+  background-color: $c-orange;
+  color: #fff;
+}
+
+.button-green {
+  background-color: $c-green;
+  color: #fff;
+}
+
+.button-hollow {
+  background: transparent;
+  border: solid 3px $c-blue;
+  color: $c-blue;
+  padding: 8px 10px;
+}
+
+.button-l-blue {
+  @extend .button-blue;
+  font-size: 1.7rem;
+}
+
+.button-xl-orange {
+  @extend .button-orange;
+  font-size: 2.4rem;
+}
+
+.button-white {
+  background: #fff;
+  color: $c-blue;
+}

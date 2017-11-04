@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+	<div class="intro">
+			<h1>{{ header.title }}</h1>
+			{{ page.content }}
+
+			<a href="{{ page.media[header.winners_file_select].cache.url }}">Ver lista completa</a>
+	</div>
+
+	<div class="indicators">
+		<p> {{ header.kpi_first }} </p>
+		<p> {{ header.kpi_second }} </p>
+		<p> {{ header.kpi_third }} </p>
+		<p> {{ header.kpi_fourth }} </p>
+	</div>
+
+	<div class="closing">
+		<h3> Sea parte del cambio <br> con Bandera Azul Ecológica Costa Rica</h3>
+		<a href="#">Conozca como aplicar</a>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+name: Azul
+version: 0.1
+description: "Azul is a theme to be used for the site of Banera Azu Ecologica with **Grav**"
+icon: empire
+author:
+  name: CETAV
+  email: beto@estudiomanati.com
+  url: http://getgrav.org
+# homepage: https://github.com/getgrav/grav-theme-antimatter
+# demo: http://demo.getgrav.org/blog-skeleton
+# keywords: antimatter, theme, core, modern, fast, responsive, html5, css3
+# bugs: https://github.com/getgrav/grav-theme-antimatter/issues
+license: All rights reserved

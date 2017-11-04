@@ -1,0 +1,56 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<!-- facebook code -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10&appId=195932157209239';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div class="intro">
+			<h1>{{ header.title }}</h1>
+			{{ page.content }}
+			<a href="header.button_first_url">{{header.button_first_text}}</a>
+			<a href="header.button_second_url">{{header.button_second_text}}</a>
+			<a href="header.button_third_url">{{header.button_third_text}}</a>
+	</div>
+
+	<div class="categories">
+		{{header.categories_title}}
+		{{header.categories_content}}
+		<!-- tenemos que enlistar todas las categorías -->
+		<a href="#">Ver todas las categorías</a>
+	</div>
+
+	<div class="success-stories">
+		<!-- meter casos de éxito -->
+	</div>
+
+	<div class="facebook-block">
+		<div class="fb-page" data-href="https://www.facebook.com/Programa-Bandera-Azul-EcologicaCosta-Rica-169072269797200/" data-tabs="timeline" data-width="300px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Programa-Bandera-Azul-EcologicaCosta-Rica-169072269797200/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Programa-Bandera-Azul-EcologicaCosta-Rica-169072269797200/">Programa Bandera Azul Ecologica(Costa Rica)</a></blockquote></div>
+	</div>
+
+	<div class="allies">
+		<h3>{{header.allies_title}}</h3>
+		{{header.allies_content}}
+		<div class="allied-item">
+
+			<!-- get collection from path /aliados  -->
+			{% set options = { items: {'@page.children': '/aliados'}, 'limit': 0, 'order': {'by': 'title', 'dir': 'asc'}, 'pagination': false } %}
+			{% set allied_logos = page.collection(options) %}
+
+			{% for p in allied_logos %}
+
+				<h2>{{ p.title }}</h2>
+				{{ page.media[header.header_image_file].cache.url }}
+				[imagen]
+
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

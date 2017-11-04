@@ -1,0 +1,87 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    {% include 'partials/metadata.html.twig' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css-compiled/styles.css') %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js', 100) %}
+        {% do assets.addJs('theme://js/azul.js') %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head %}
+</head>
+<body id="top" class="{{ page.header.body_classes }}">
+    <div id="sb-site">
+
+        {% block header %}
+        <header class="global-header">
+            <div class="limiter">
+              <div class="global-logo">
+                  <a href="{{ base_url == '' ? '/' : base_url }}">{{ config.site.title }}</a>
+              </div>
+              <div class="main-nav">
+                  {% block header_extra %}{% endblock %}
+                  {% block header_navigation %}
+                  {% include 'partials/navigation.html.twig' %}
+                  {% endblock %}
+                  <span class="panel-activation sb-toggle-left navbar-left menu-btn fa fa-bars"></span>
+              </div>
+            </div>
+        </header>
+        {% endblock %}
+
+        {% block showcase %}{% endblock %}
+
+        {% block body %}
+        <section class="{{ class }}">
+            <div class="limiter">
+              {% block content %}{% endblock %}
+            </div>
+        </section>
+        {% endblock %}
+
+        {% block footer %}
+        <footer id="footer">
+            <p>footer</p>
+        </footer>
+        {% endblock %}
+
+    </div>
+    {% block sidebar_navigation %}
+        <div class="sb-slidebar sb-left sb-width-thin">
+            <div id="panel">
+            {% include 'partials/navigation.html.twig' %}
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block bottom %}
+        {{ assets.js('bottom') }}
+        <script>
+        $(function () {
+            $(document).ready(function() {
+              $.slidebars({
+                hideControlClasses: true,
+                scrollLock: true
+              });
+            });
+        });
+        </script>
+    {% endblock %}
+
+</body>
+</html>

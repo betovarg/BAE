@@ -1,0 +1,18 @@
+{% embed 'partials/base.html.twig' %}
+
+	{% set collection = page.collection() %}
+
+	{% block content %}
+		<div class="intro">
+			{{ page.content }}
+		</div>
+
+		<div class="">
+			{% for child in collection %}
+        {% include 'partials/logo_item.html.twig' with {'allies':page, 'page':child} %}
+		  {% endfor %}
+		</div>
+
+	{% endblock %}
+
+{% endembed %}

@@ -1,0 +1,65 @@
+title: Logo national
+'@extends':
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+
+      fields:
+
+        logo:
+          type: tab
+          title: Logo Item
+
+          fields:
+
+            header_image:
+              type: section
+              title: Header Image
+              underline: true
+
+            header.header_image:
+              type: toggle
+              toggleable: true
+              label: Display Header Image
+              help: Enabled displaying of a header image
+              highlight: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+
+            header.header_image_file:
+              type: file
+              label: Main images
+              multiple: false
+              destination: 'self@'
+              random_name: false
+              avoid_overwriting: true
+              accept:
+                - image/*
+
+            header.header_image_width:
+              type: text
+              toggleable: true
+              label: Image Width
+              size: small
+              help: Header width in px
+              placeholder: Default is 900
+              validate:
+                type: int
+                min: 0
+                max: 5000
+
+            header.header_image_height:
+              type: text
+              toggleable: true
+              label: Image Height
+              size: small
+              help: Header height in px
+              placeholder: Default is 300
+              validate:
+                type: int
+                min: 0
+                max: 5000
