@@ -7,20 +7,21 @@ Grav contenido en folder /Grav
 Azul
 
 ## KSS
-La guía de estilos se compila en:
+La guía de estilos se ubica en:
 `/grav/user/themes/azul/.tpm/styleguide/index.html`
 
 #SASS
-Archivos SASS en:
+Parciales de SASS en:
 `/grav/user/themes/azul/src/sass/`
 
 ## styles.css
-El archivo styles.css se compila temporalmente en 2 ubicaciones:
+El archivo styles.css se coloca temporalmente en 2 ubicaciones:
 `/grav/user/themes/azul/.tpm/styleguide/css/styles.css`
 `/grav/user/themes/azul/css-compiled/styles.css`
 
-## Compilar CSS y guía de estilos
-Dentro de tema azul:
+## Compilación de CSS y guía de estilos
+Dentro de root de tema azul:
 `/grav/user/themes/azul/`
 
+Correr:
 `gulp watch`
